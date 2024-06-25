@@ -18,6 +18,9 @@ app.use(express.json())
 app.use(urlencoded({extended:false}))
 
 app.use("/",router)
+app.get("/",(req,res)=>{
+res.send("hello shubham")
+})
 
 
 const PORT = process.env.PORT || 5000;
