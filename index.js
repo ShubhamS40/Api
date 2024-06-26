@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 app.use(cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL in production
+    origin: "https://ss-developer.vercel.app", // Replace with your frontend URL in production
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -21,6 +21,11 @@ app.use("/",router)
 app.get("/",(req,res)=>{
 res.send("hello shubham")
 })
+
+app.post("/shubham",(req,res)=>{
+    let body=req.body
+    res.json(body)
+    })
 
 
 const PORT = process.env.PORT || 5000;
